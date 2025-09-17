@@ -15,3 +15,28 @@ docs/
 # Compiled Object files
 *.o
 *.obj
+
+# ESP-IDF specific
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults.old
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Credentials (wichtig für Weatherstation!)
+credentials.h
+wifi_config.h
+secrets.h
+
+# Backup files
+*.bak
+*~
