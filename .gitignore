@@ -32,9 +32,8 @@ sdkconfig.defaults.old
 .DS_Store
 Thumbs.db
 
-# Credentials (wichtig für Weatherstation!)
+# Credentials
 credentials.h
-wifi_config.h
 secrets.h
 
 # Backup files
