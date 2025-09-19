@@ -54,6 +54,7 @@ WeatherstationLight ist eine kompakte, energieeffiziente Wetterstation, die mit 
 _Gesamtansicht der WeatherstationLight Hardware_
 
 ![BME280 Sensor](images/BME280.webp)
+
 _BME280 Sensor im Detail_
 
 ### Hauptkomponenten
@@ -124,7 +125,6 @@ LED:
 
 ### Verdrahtung 
 ![Verdrahtung](images/hardwaresetup.png)
-
 _Aufbau der Hardware_
 Es ist zu beachten, das es keie Pullup Widerstände für SDA und SCL braucht, da diese intern aktiviert wurden. Sollte die Adresse 0x77 gewünscht sein, kann SDO auf 3.3V gehängt werden.
 
