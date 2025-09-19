@@ -50,7 +50,11 @@ WeatherstationLight ist eine kompakte, energieeffiziente Wetterstation, die mit 
 ## Hardware
 
 ![Hardware Overview](images/ESP32.png)
+
 _Gesamtansicht der WeatherstationLight Hardware_
+
+![BME280 Sensor](images/BME280.webp)
+_BME280 Sensor im Detail_
 
 ### Hauptkomponenten
 
@@ -70,7 +74,7 @@ Bluetooth: 5.0
 IEEE 802.15.4: Unterstützt
 ```
 
-### Verbindungen
+### Pinout
 
 ![ESP32 Pinout](images/ESP32_pinout.png)
 _GPIO-Pinout des ESP32-C6_
@@ -82,8 +86,10 @@ _Pinout des BME280 Sensors_
 BME280 Sensor:
 - VCC → 3.3V
 - GND → GND
-- SCL → GPIO 8 (I2C Clock)
-- SDA → GPIO 9 (I2C Data)
+- SCL → GPIO 14 (I2C Clock)
+- SDA → GPIO 20 (I2C Data)
+- CSB → 3.3V - I2C Kommunikation
+- SDO → GND - Adresse 0x76 verwenden
 
 LED:
 - Anode → GPIO 2
@@ -114,11 +120,22 @@ LED:
 - ESP32-C6 Development Board
 - BME280 Sensor
 - USB-C Kabel
+- Breadport mit Kabel (optional empfohlen)
+
+### Verdrahtung 
+![Verdrahtung](images/hardwaresetup.png)
+
+_Aufbau der Hardware_
+Es ist zu beachten, das es keie Pullup Widerstände für SDA und SCL braucht, da diese intern aktiviert wurden. Sollte die Adresse 0x77 gewünscht sein, kann SDO auf 3.3V gehängt werden.
+
+![Aufbau](images/finish_setup.jpg)
+
+_Fertige Aufbau_
 
 ### Repository klonen
 
 ```bash
-git clone https://github.com/WindowsPlaceBrain/WeatherstationLight.git
+git clone https://github.com/WindowPlaceBrain/WeatherstationLight.git
 cd WeatherstationLight
 ```
 
@@ -175,9 +192,6 @@ pio device monitor --baud 115200
 3. System startet automatisch und verbindet sich mit WLAN
 
 ### Ausgabe-Beispiel
-
-![BME280 Sensor](images/BME280.webp)
-_BME280 Sensor im Detail_
 
 ```
 I (5000) WEATHERSTATION: ESP32-C6 WeatherstationLight gestartet
@@ -253,40 +267,29 @@ git merge feature/neue-funktion
 
 ### v0.4 - README-Dokumentation (Aktuell)
 
-- ✅ Umfassende README-Dokumentation
-- ✅ Hardware-Bilder und Pinout-Diagramme
-- ✅ Vollständige Installationsanleitung
-- ✅ Entfernung aller Emojis für professionelles Aussehen
+-  Umfassende README-Dokumentation
+-  Hardware-Bilder und Pinout-Diagramme
+-  Vollständige Installationsanleitung
 
 ### v0.3 - WLAN-Funktionalität
 
-- ✅ WiFi 6 Unterstützung
-- ✅ Hostname-Konfiguration
-- ✅ Automatische Wiederverbindung
-- ✅ Modulare Bibliotheks-Architektur
+-  WiFi 6 Unterstützung
+-  Hostname-Konfiguration
+-  Automatische Wiederverbindung
+-  Modulare Bibliotheks-Architektur
 
 ### v0.2 - BME280 Luftfeuchtigkeit korrigiert
 
-- ✅ Luftfeuchtigkeits-Berechnung korrigiert
-- ✅ Verbesserte Sensor-Kalibrierung
+-  Luftfeuchtigkeits-Berechnung korrigiert
+-  Fehlerbehebung bei Luftdruck Sensor-Kalibrierung
 
 ### v0.1 - Initiale Version
 
-- ✅ Grundlegendes ESP32-C6 Setup
-- ✅ BME280 Sensor-Integration
-- ✅ LED-Status-Indikator
+-  Grundlegendes ESP32-C6 Setup
+-  BME280 Sensor-Integration
+-  LED-Status-Indikator
 
-## Beitragen
-
-Wir freuen uns über Beiträge! Hier ist wie Sie helfen können:
-
-1. **Fork** das Repository
-2. **Feature-Branch** erstellen (`git checkout -b feature/AmazingFeature`)
-3. **Änderungen committen** (`git commit -m 'Add some AmazingFeature'`)
-4. **Branch pushen** (`git push origin feature/AmazingFeature`)
-5. **Pull Request** öffnen
-
-### Entwicklungsumgebung
+## Entwicklungsumgebung
 
 - **IDE:** VS Code mit PlatformIO Extension
 - **Framework:** ESP-IDF 5.5.0

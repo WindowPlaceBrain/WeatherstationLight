@@ -18,6 +18,7 @@ static const char *TAG = "WEATHERSTATION";
 
 void app_main(void)
 {
+    // Startnachricht mit Verzögerung zum besseren Monitoroutput anzeigen
     vTaskDelay(pdMS_TO_TICKS(5000));
     ESP_LOGI(TAG, "ESP32-C6 WeatherstationLight gestartet");
     
