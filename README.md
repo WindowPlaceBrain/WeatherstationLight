@@ -125,6 +125,7 @@ LED:
 
 ### Verdrahtung 
 ![Verdrahtung](images/hardwaresetup.png)
+
 _Aufbau der Hardware_
 Es ist zu beachten, das es keie Pullup Widerstände für SDA und SCL braucht, da diese intern aktiviert wurden. Sollte die Adresse 0x77 gewünscht sein, kann SDO auf 3.3V gehängt werden.
 
