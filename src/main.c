@@ -1,14 +1,15 @@
 /**
  * ESP32-C6 WeatherstationLight
  * 
- * BME280 Sensor Test mit Blink-LED
+ * BME280 Sensor Test mit Blink-LED und WLAN-Verbindung
  */
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
-#include <bme280.h>
+#include "bme280.h"
+#include "wifi_config.h"
 
 // LED Pin (Port 15)
 #define LED_PIN 15
@@ -17,7 +18,21 @@ static const char *TAG = "WEATHERSTATION";
 
 void app_main(void)
 {
+    vTaskDelay(pdMS_TO_TICKS(5000));
     ESP_LOGI(TAG, "ESP32-C6 WeatherstationLight gestartet");
+    
+    // WLAN initialisieren und verbinden
+    esp_err_t wifi_ret = wifi_init();
+    if (wifi_ret == ESP_OK) {
+        wifi_ret = wifi_connect();
+        if (wifi_ret == ESP_OK) {
+            ESP_LOGI(TAG, "WLAN erfolgreich verbunden!");
+        } else {
+            ESP_LOGE(TAG, "WLAN Verbindung fehlgeschlagen: %s", esp_err_to_name(wifi_ret));
+        }
+    } else {
+        ESP_LOGE(TAG, "WLAN Initialisierung fehlgeschlagen: %s", esp_err_to_name(wifi_ret));
+    }
     
     // LED Pin konfigurieren
     gpio_config_t led_config = {
@@ -57,8 +72,16 @@ void app_main(void)
         ESP_LOGI(TAG, "LED AUS");
         vTaskDelay(pdMS_TO_TICKS(500));
         
-        // Alle 10 Blinks: BME280 Messung (falls verfügbar)
+        // Alle 10 Blinks: BME280 Messung und WLAN Status (falls verfügbar)
         if (blink_count % 10 == 0) {
+            // WLAN Status prüfen
+            if (wifi_is_connected()) {
+                ESP_LOGI(TAG, "WLAN Status: VERBUNDEN");
+            } else {
+                ESP_LOGW(TAG, "WLAN Status: NICHT VERBUNDEN");
+            }
+            
+            // BME280 Messung
             bme280_data_t data;
             ret = bme280_measure(&data);
             if (ret == ESP_OK) {
