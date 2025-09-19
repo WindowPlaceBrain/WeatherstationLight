@@ -23,16 +23,13 @@ Nach dem Hinzufügen von Bildern, können Sie sie im Haupt-README.md wie folgt r
 ```markdown
 ## Hardware
 
-![Hardware Overview](images/hardware-overview.jpg)
+![Hardware Overview](images/finish_setup.jpg)
 *Gesamtansicht der WeatherstationLight Hardware*
 
 ### Verdrahtung
-![Verdrahtungs-Schema](images/wiring-diagram.jpg)
+![Verdrahtungs-Schema](images/hardwaresetup.png)
 *Verdrahtungs-Schema für ESP32-C6 und BME280*
 
-## Systemarchitektur
-![Systemarchitektur](images/system-architecture.png)
-*Übersicht der Systemkomponenten und Datenfluss*
 ```
 
 ## 🔄 Aktualisierung
