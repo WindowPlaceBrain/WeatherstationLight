@@ -123,8 +123,10 @@ LED:
 - USB-C Kabel
 - Breadport mit Kabel (optional empfohlen)
 
-### Verdrahtung 
+### Verdrahtung
+
 ![Verdrahtung](images/hardwaresetup.png)
+
 _Aufbau der Hardware_
 Es ist zu beachten, das es keie Pullup Widerstände für SDA und SCL braucht, da diese intern aktiviert wurden. Sollte die Adresse 0x77 gewünscht sein, kann SDO auf 3.3V gehängt werden.
 
@@ -265,29 +267,44 @@ git merge feature/neue-funktion
 
 ## Versionen
 
-### v0.4 - README-Dokumentation (Aktuell)
+### v1.0.0 - Finale Release (Aktuell)
 
--  Umfassende README-Dokumentation
--  Hardware-Bilder und Pinout-Diagramme
--  Vollständige Installationsanleitung
+**WeatherstationLight - Komplette IoT-Wetterstation**
+
+- ESP32-C6 Mikrocontroller mit WiFi 6 Support
+- BME280 Sensor für Temperatur, Luftfeuchtigkeit und Luftdruck
+- WLAN-Verbindung mit automatischer Wiederverbindung
+- Hostname-Konfiguration "WeatherstationLight"
+- LED-Status-Indikator mit Blink-Pattern
+- Serielle Ausgabe für Monitoring und Debugging
+- Modulare Bibliotheks-Architektur
+- Vollständige Dokumentation mit Hardware-Bildern
+- Professionelle README-Dokumentation
+- Git-basierte Versionskontrolle mit Tags
+
+### v0.4 - README-Dokumentation
+
+- Umfassende README-Dokumentation
+- Hardware-Bilder und Pinout-Diagramme
+- Vollständige Installationsanleitung
 
 ### v0.3 - WLAN-Funktionalität
 
--  WiFi 6 Unterstützung
--  Hostname-Konfiguration
--  Automatische Wiederverbindung
--  Modulare Bibliotheks-Architektur
+- WiFi 6 Unterstützung
+- Hostname-Konfiguration
+- Automatische Wiederverbindung
+- Modulare Bibliotheks-Architektur
 
 ### v0.2 - BME280 Luftfeuchtigkeit korrigiert
 
--  Luftfeuchtigkeits-Berechnung korrigiert
--  Fehlerbehebung bei Luftdruck Sensor-Kalibrierung
+- Luftfeuchtigkeits-Berechnung korrigiert
+- Fehlerbehebung bei Luftdruck Sensor-Kalibrierung
 
 ### v0.1 - Initiale Version
 
--  Grundlegendes ESP32-C6 Setup
--  BME280 Sensor-Integration
--  LED-Status-Indikator
+- Grundlegendes ESP32-C6 Setup
+- BME280 Sensor-Integration
+- LED-Status-Indikator
 
 ## Entwicklungsumgebung
 
