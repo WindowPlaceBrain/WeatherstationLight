@@ -271,22 +271,22 @@ git merge feature/neue-funktion
 
 **WeatherstationLight - Komplette IoT-Wetterstation**
 
-- ✅ ESP32-C6 Mikrocontroller mit WiFi 6 Support
-- ✅ BME280 Sensor für Temperatur, Luftfeuchtigkeit und Luftdruck
-- ✅ WLAN-Verbindung mit automatischer Wiederverbindung
-- ✅ Hostname-Konfiguration "WeatherstationLight"
-- ✅ LED-Status-Indikator mit Blink-Pattern
-- ✅ Serielle Ausgabe für Monitoring und Debugging
-- ✅ Modulare Bibliotheks-Architektur
-- ✅ Vollständige Dokumentation mit Hardware-Bildern
-- ✅ Professionelle README-Dokumentation
-- ✅ Git-basierte Versionskontrolle mit Tags
+- ESP32-C6 Mikrocontroller mit WiFi 6 Support
+- BME280 Sensor für Temperatur, Luftfeuchtigkeit und Luftdruck
+- WLAN-Verbindung mit automatischer Wiederverbindung
+- Hostname-Konfiguration "WeatherstationLight"
+- LED-Status-Indikator mit Blink-Pattern
+- Serielle Ausgabe für Monitoring und Debugging
+- Modulare Bibliotheks-Architektur
+- Vollständige Dokumentation mit Hardware-Bildern
+- Professionelle README-Dokumentation
+- Git-basierte Versionskontrolle mit Tags
 
 ### v0.4 - README-Dokumentation
 
-- ✅ Umfassende README-Dokumentation
-- ✅ Hardware-Bilder und Pinout-Diagramme
-- ✅ Vollständige Installationsanleitung
+- Umfassende README-Dokumentation
+- Hardware-Bilder und Pinout-Diagramme
+- Vollständige Installationsanleitung
 
 ### v0.3 - WLAN-Funktionalität
 
