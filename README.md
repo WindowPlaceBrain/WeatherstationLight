@@ -45,7 +45,7 @@ WeatherstationLight ist eine kompakte, energieeffiziente Wetterstation, die mit 
 
 ## 🔌 Hardware
 
-![Hardware Overview](images/hardware-overview.jpg)
+![Hardware Overview](images/ESP32.png)
 *Gesamtansicht der WeatherstationLight Hardware*
 
 ### Hauptkomponenten
@@ -66,8 +66,11 @@ IEEE 802.15.4: Unterstützt
 
 ### Verbindungen
 
-![Verdrahtungs-Schema](images/wiring-diagram.jpg)
-*Verdrahtungs-Schema für ESP32-C6 und BME280*
+![ESP32 Pinout](images/ESP32_pinout.png)
+*GPIO-Pinout des ESP32-C6*
+
+![BME280 Pinout](images/BME280_Pinout.jpg)
+*Pinout des BME280 Sensors*
 
 ```
 BME280 Sensor:
@@ -104,7 +107,7 @@ LED:
 
 ### Repository klonen
 ```bash
-git clone https://github.com/ihr-username/WeatherstationLight.git
+git clone https://github.com/WindowsPlaceBrain/WeatherstationLight.git
 cd WeatherstationLight
 ```
 
@@ -156,8 +159,8 @@ pio device monitor --baud 115200
 
 ### Ausgabe-Beispiel
 
-![Serieller Monitor Output](images/serial-output.png)
-*Beispiel der seriellen Ausgabe*
+![BME280 Sensor](images/BME280.webp)
+*BME280 Sensor im Detail*
 
 ```
 I (5000) WEATHERSTATION: ESP32-C6 WeatherstationLight gestartet
