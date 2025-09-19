@@ -40,9 +40,9 @@
 #define BME280_REG_CALIB_1     0x88    // T1-T3, P1-P9
 #define BME280_REG_CALIB_2     0xE1    // H1, H2, H3
 
-// BME280 Konfiguration (Forced Mode, höheres Oversampling für bessere Genauigkeit)
-#define BME280_CONFIG_HUM      0x05    // Humidity oversampling x16 (bessere Genauigkeit)
-#define BME280_CONFIG_MEAS     0x25    // Temperature x1, Pressure x1, Forced mode
+// BME280 Konfiguration (Forced Mode, optimiertes Oversampling)
+#define BME280_CONFIG_HUM      0x01    // Humidity oversampling x1
+#define BME280_CONFIG_MEAS     0x35    // Temperature x1, Pressure x4, Forced mode
 #define BME280_CONFIG_FILTER   0x00    // Filter off, Standby 0.5ms
 
 // Kalibrierungsdaten Struktur

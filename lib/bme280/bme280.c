@@ -173,7 +173,7 @@ esp_err_t bme280_config(void)
         return ret;
     }
     
-    // Temperature x1, Pressure x1, Forced mode
+    // Temperature x1, Pressure x4, Forced mode
     uint8_t ctrl_meas = BME280_CONFIG_MEAS;
     ret = bme280_i2c_write(BME280_REG_CTRL_MEAS, &ctrl_meas, 1);
     if (ret != ESP_OK) {
